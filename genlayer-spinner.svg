@@ -1,0 +1,47 @@
+<svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Loading">
+  <style>
+    .gl-track {
+      fill: none;
+      stroke: #606060;
+      stroke-opacity: 0.25;
+      stroke-width: 8;
+    }
+    .gl-arc {
+      fill: none;
+      stroke: #110FFF;
+      stroke-width: 8;
+      stroke-linecap: round;
+      transform-origin: 50px 50px;
+      animation: gl-spin 1.4s linear infinite, gl-dash 1.4s ease-in-out infinite;
+    }
+    .gl-cursor {
+      fill: #00FF66;
+      animation: gl-blink 1.4s steps(1) infinite;
+    }
+    @keyframes gl-spin {
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes gl-dash {
+      0%   { stroke-dasharray: 12 226; stroke-dashoffset: 0; }
+      50%  { stroke-dasharray: 170 226; stroke-dashoffset: -60; }
+      100% { stroke-dasharray: 12 226; stroke-dashoffset: -226; }
+    }
+    @keyframes gl-blink {
+      0%, 49%  { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+  </style>
+
+  <!-- track -->
+  <circle class="gl-track" cx="50" cy="50" r="36"/>
+
+  <!-- rotating progress arc, Kinetic Cobalt -->
+  <circle class="gl-arc" cx="50" cy="50" r="36"/>
+
+  <!-- GenLayer identity: terminal bracket ">" -->
+  <path d="M 41 38 L 53 50 L 41 62" fill="none" stroke="#110FFF" stroke-width="7"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- blinking cursor underscore, references the ">_" mark -->
+  <rect class="gl-cursor" x="57" y="58" width="10" height="6" rx="1.5"/>
+</svg>
